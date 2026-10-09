@@ -12,10 +12,24 @@ An interactive, CPU-only YouTube comment analyzer built with Streamlit. It downl
 
 ## Setup
 
-Dependencies are already captured in `uv.lock`:
+Python 3.13 or newer is required. From the project directory, create and activate a virtual environment:
+
+```powershell
+py -3.13 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+On macOS or Linux:
 
 ```bash
-uv sync
+python3.13 -m venv .venv
+source .venv/bin/activate
+```
+
+Install the project and its test dependency with pip:
+
+```bash
+python -m pip install --upgrade pip
 ```
 
 Create a [YouTube Data API v3 key](https://console.cloud.google.com/apis/library/youtube.googleapis.com) and a free-tier [Gemini API key in Google AI Studio](https://aistudio.google.com/app/apikey). The Gemini key is only required for the chatbot. You can paste both keys into the app, set environment variables, or create `.streamlit/secrets.toml`:
@@ -29,8 +43,10 @@ The secrets file is ignored by Git.
 
 ## Run
 
+With the virtual environment activated:
+
 ```bash
-python -m streamlit run .\main.py
+python -m streamlit run main.py
 ```
 
 Open <http://localhost:8501>, paste a public video URL, and select **Analyze comments**.
@@ -45,5 +61,5 @@ Open <http://localhost:8501>, paste a public video URL, and select **Analyze com
 ## Test
 
 ```bash
-uv run pytest
+python -m pytest
 ```

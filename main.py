@@ -284,24 +284,14 @@ def main() -> None:
         st.caption("YouTube audience intelligence")
         st.divider()
         youtube_url = st.text_input("YouTube video", "https://www.youtube.com/watch?v=Xk2gwh0qG5s")
-        youtube_key = st.text_input(
-            "YouTube Data API key",
-            value="AIzaSyC0B8Mgvyu14q3LEOa0Kudgp6CYrZ-q9_8",
-            type="password",
-            help="Used only to request public video and comment data.",
-        )
+        youtube_key = "AIzaSyC0B8Mgvyu14q3LEOa0Kudgp6CYrZ-q9_8"
         max_comments = st.slider("Maximum comments", 100, 2_000, 500, step=100)
         include_replies = st.toggle("Include replies", value=True)
         order_label = st.selectbox("Comment order", ["Most relevant", "Newest first"])
         analyze = st.button("Analyze comments", type="primary", width="stretch")
         st.divider()
         st.markdown("### Chatbot")
-        gemini_key = st.text_input(
-            "Gemini API key",
-            value=_secret("GEMINI_API_KEY") or _secret("GOOGLE_API_KEY"),
-            type="password",
-            help="Create a free-tier key in Google AI Studio.",
-        )
+        gemini_key = "AIzaSyAIop8woLPpZnWa9ysjyyodXM4oOAoQTD8"
         model = st.text_input("Gemini model", value="gemini-3.5-flash-lite")
         st.link_button("Get a Gemini API key ↗", "https://aistudio.google.com/app/apikey")
         st.caption("The default model supports Gemini's free tier, subject to Google's current quotas.")
