@@ -1,0 +1,25 @@
+[project]
+name = "sentiment"
+version = "0.1.0"
+description = "Interactive CPU-only YouTube comment sentiment analyzer and LangChain chatbot"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "langchain-core>=1.6.9",
+    "langchain-google-genai>=4.4.0",
+    "pandas>=3.0.6",
+    "plotly>=7.1.0",
+    "rank-bm25>=0.2.2",
+    "requests>=2.34.2",
+    "streamlit>=1.65.0",
+    "vadersentiment>=3.3.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
