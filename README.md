@@ -1,7 +1,9 @@
 # Comment Pulse
 
 An interactive, CPU-only YouTube comment analyzer built with Streamlit. It downloads public comments through the official YouTube Data API, scores each comment locally with VADER, and provides a Gemini-powered LangChain chatbot grounded in BM25-retrieved comments.
+## View Deployed version
 
+https://youtubecommentanalysis-thisisatestbtw.streamlit.app
 ## Features
 
 - Accepts standard YouTube, `youtu.be`, Shorts, Live, embed URLs, or a raw video ID
